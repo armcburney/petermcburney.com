@@ -5,5 +5,6 @@ FactoryGirl.define do
     featured { Faker::Boolean.boolean(0.3) }
     for_sale { Faker::Boolean.boolean(0.6) }
     price    { Faker::Number.decimal(2) }
+    image    { File.new(Rails.root + 'spec/factories/images/rails.png') }
   end
 end
