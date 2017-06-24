@@ -1,15 +1,12 @@
 .row
   .section
-    p#notice
-      = notice
+    = image_tag @artwork.image.url(:large)
+    = image_tag @artwork.image.url(:medium)
+
     p
       strong
         | Title:
       = @artwork.title
-    p
-      strong
-        | Image url:
-      = @artwork.image_url
     p
       strong
         | Featured:

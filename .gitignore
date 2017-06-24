@@ -12,6 +12,7 @@
 
 .byebug_history
 .env
+.env.development
 /public/packs
 /node_modules
 todos.md

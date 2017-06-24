@@ -7,7 +7,6 @@
       thead
         tr
           th Title
-          th Image url
           th Featured
           th For sale
           th Type
@@ -18,7 +17,6 @@
         - @artworks.each do |artwork|
           tr
             td= artwork.title
-            td= artwork.image_url
             td= artwork.featured
             td= artwork.for_sale
             td= artwork.type
