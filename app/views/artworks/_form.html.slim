@@ -1,31 +1,37 @@
-= form_with(model: artwork, local: true) do |form|
-  - if artwork.errors.any?
-    #error_explanation
-      h2= pluralize(artwork.errors.count, "error")
-        |  prohibited this artwork from being saved:
-      ul
-        - artwork.errors.full_messages.each do |message|
-          li= message
-  .field
-    = form.label :title
-    = form.text_field :title, id: :artwork_title
-  .field
-    = form.label :image_url
-    = form.text_field :image_url, id: :artwork_image_url
-  .field
-    = form.label :featured
-    = form.check_box :featured, id: :artwork_featured
-  .field
-    = form.label :for_sale
-    = form.check_box :for_sale, id: :artwork_for_sale
-  .field
-    = form.label :type
-    = form.text_field :type, id: :artwork_type
-  .field
-    = form.label :size
-    = form.text_field :size, id: :artwork_size
-  .field
-    = form.label :price
-    = form.text_field :price, id: :artwork_price
-  .actions
-    = form.submit
+// Errors
+- if artwork.errors.any?
+  #error_explanation
+    h2= pluralize(artwork.errors.count, "error")
+       prohibited this artwork from being saved:
+    ul
+      - artwork.errors.full_messages.each do |message|
+        li= message
+
+table
+  tbody
+    = form_with(model: artwork, local: true) do |form|
+      tr
+        td
+          = form.label :title
+          = form.text_field :title, id: :artwork_title
+        td
+          = form.label :image_url
+          = form.text_field :image_url, id: :artwork_image_url
+        td
+          = form.label :type
+          = form.text_field :type, id: :artwork_type
+        td
+          = form.label :size
+          = form.text_field :size, id: :artwork_size
+      tr
+        td
+          = form.label :price
+          = form.text_field :price, id: :artwork_price
+        td
+          = form.label :featured
+          = form.check_box :featured, id: :artwork_featured
+          br
+          = form.label :for_sale
+          = form.check_box :for_sale, id: :artwork_for_sale
+        td
+          = form.submit
