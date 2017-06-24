@@ -1,0 +1,34 @@
+.row
+  .section
+    p#notice
+      = notice
+    p
+      strong
+        | Title:
+      = @artwork.title
+    p
+      strong
+        | Image url:
+      = @artwork.image_url
+    p
+      strong
+        | Featured:
+      = @artwork.featured
+    p
+      strong
+        | For sale:
+      = @artwork.for_sale
+    p
+      strong
+        | Type:
+      = @artwork.type
+    p
+      strong
+        | Size:
+      = @artwork.size
+    p
+      strong
+        | Price:
+      = @artwork.price
+    = link_to 'Edit', edit_artwork_path(@artwork)
+    = link_to 'Back', artworks_path
