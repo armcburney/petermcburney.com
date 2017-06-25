@@ -5,10 +5,11 @@ RSpec.describe 'artworks/new', type: :view do
     assign(:artwork, Artwork.new(
       title: 'MyString',
       featured: false,
-      for_sale: false,
-      type: '',
+      for_sale: true,
+      artwork_type: :painting,
       size: 'MyString',
-      price: '9.99'
+      price: '9.99',
+      image: File.new(Rails.root + 'spec/factories/images/sample.jpg')
     ))
   end
 
@@ -22,7 +23,7 @@ RSpec.describe 'artworks/new', type: :view do
 
       assert_select 'input[name=?]', 'artwork[for_sale]'
 
-      assert_select 'input[name=?]', 'artwork[type]'
+      assert_select 'input[name=?]', 'artwork[artwork_type]'
 
       assert_select 'input[name=?]', 'artwork[size]'
 

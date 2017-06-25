@@ -1,12 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe ArtworksController, type: :controller do
+  include AuthHelper
+
   let(:valid_attributes) do
-    { title: "Peter's awesome artwork" }
+    {
+      title: 'Title',
+      featured: false,
+      for_sale: true,
+      artwork_type: :painting,
+      size: 'Size',
+      price: '9.99',
+      image_file_name: 'sample_image.jpg',
+      image_content_type: 'image/jpg',
+      image_file_size: 1.megabyte
+    }
   end
 
+  # Fails since requires 'price' to have presence, because 'for_sale' is true
   let(:invalid_attributes) do
-    { title: "Peter's awesome artwork" }
+    {
+      title: 'Title',
+      featured: false,
+      for_sale: true,
+      artwork_type: :painting,
+      size: 'Size',
+      image_file_name: 'sample_image.jpg',
+      image_content_type: 'image/jpg',
+      image_file_size: 1.megabyte
+    }
+  end
+
+  before(:each) do
+    http_login
   end
 
   describe 'GET #index' do
@@ -86,7 +112,7 @@ RSpec.describe ArtworksController, type: :controller do
       it 'returns a success response (i.e. to display the "edit" template)' do
         artwork = Artwork.create! valid_attributes
         put :update, params: { id: artwork.to_param, artwork: invalid_attributes }
-        expect(response).to be_success
+        expect(response).not_to be_success
       end
     end
   end

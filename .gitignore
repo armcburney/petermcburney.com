@@ -14,5 +14,6 @@
 .env
 .env.development
 /public/packs
+/public/system
 /node_modules
 todos.md
