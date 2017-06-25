@@ -5,7 +5,6 @@ class CreateArtworks < ActiveRecord::Migration[5.1]
       t.string :image_url
       t.boolean :featured
       t.boolean :for_sale
-      t.string :type
       t.string :size
       t.decimal :price
 

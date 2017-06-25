@@ -85,8 +85,7 @@ RSpec.describe ArtworksController, type: :controller do
     context 'with invalid params' do
       it 'returns a success response (i.e. to display the "edit" template)' do
         artwork = Artwork.create! valid_attributes
-        put :update,
-            params: { id: artwork.to_param, artwork: invalid_attributes }
+        put :update, params: { id: artwork.to_param, artwork: invalid_attributes }
         expect(response).to be_success
       end
     end

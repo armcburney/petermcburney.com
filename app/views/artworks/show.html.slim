@@ -18,7 +18,7 @@
     p
       strong
         | Type:
-      = @artwork.type
+      = @artwork.artwork_type
     p
       strong
         | Size:
@@ -27,5 +27,6 @@
       strong
         | Price:
       = @artwork.price
+
     = link_to 'Edit', edit_artwork_path(@artwork)
     = link_to 'Back', artworks_path

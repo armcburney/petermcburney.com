@@ -1,3 +1,10 @@
-.row
-  .section
-    h1 Home
+.header
+  .row.hero.bg-main
+    .section.center
+      h1.x5 Peter McBurney's Art
+      h2 Artist, Photographer, Musician, Teacher.
+      hr
+      h4
+        span= link_to 'Profile', controller: 'home', action: 'profile'
+        span= link_to 'Artwork', controller: 'artworks'
+        span= link_to 'Commissions', controller: 'home', action: 'commissions'

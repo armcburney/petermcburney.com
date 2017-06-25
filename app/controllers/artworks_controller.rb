@@ -1,23 +1,52 @@
+#
+# Artwork controller
+# Coded by: Andrew McBurney
+#
 class ArtworksController < ApplicationController
+  http_basic_authenticate_with(
+    name: ENV['USERNAME'], password: ENV['PASSWORD'],
+    except: %i[index show copic sketches paintings]
+  )
+
   before_action :set_artwork, only: %i[show edit update destroy]
 
-  # GET /artworks
+  # GET /artwork
   def index
     @artworks = Artwork.all
   end
 
-  # GET /artworks/:title_slug
+  # GET /artwork/types/copic
+  def copic
+    @artworks = Artwork.where(artwork_type: :copic)
+  end
+
+  # GET /artwork/types/painting
+  def paintings
+    @artworks = Artwork.where(artwork_type: :painting)
+  end
+
+  # GET /artwork/types/sketch
+  def sketches
+    @artworks = Artwork.where(artwork_type: :sketch)
+  end
+
+  # GET /artwork/types/for_sale
+  def for_sale
+    @artworks = Artwork.where(for_sale: true)
+  end
+
+  # GET /artwork/:title_slug
   def show() end
 
-  # GET /artworks/new
+  # GET /artwork/new
   def new
     @artwork = Artwork.new
   end
 
-  # GET /artworks/:title_slug/edit
+  # GET /artwork/:title_slug/edit
   def edit() end
 
-  # POST /artworks
+  # POST /artwork
   def create
     @artwork = Artwork.new(artwork_params)
 
@@ -32,7 +61,7 @@ class ArtworksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /artworks/:title_slug
+  # PATCH/PUT /artwork/:title_slug
   def update
     respond_to do |format|
       if @artwork.update(artwork_params)
@@ -45,7 +74,7 @@ class ArtworksController < ApplicationController
     end
   end
 
-  # DELETE /artworks/:title_slug
+  # DELETE /artwork/:title_slug
   def destroy
     @artwork.destroy
     respond_to do |format|
@@ -62,6 +91,6 @@ class ArtworksController < ApplicationController
 
   def artwork_params
     params.require(:artwork)
-      .permit(:title, :featured, :for_sale, :type, :size, :price, :image)
+      .permit(:title, :featured, :for_sale, :artwork_type, :size, :price, :image)
   end
 end
