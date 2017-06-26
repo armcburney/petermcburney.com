@@ -12,7 +12,7 @@ class Artwork < ApplicationRecord
   validates :slug, presence: true
   validates :price, presence: true, if: :for_sale?
 
-  validates_inclusion_of :artwork_type, in: %w[copic painting sketch]
+  validates_inclusion_of :artwork_type, in: %w(copic painting sketch)
   validates_inclusion_of :featured, in: [true, false]
   validates_inclusion_of :for_sale, in: [true, false]
 

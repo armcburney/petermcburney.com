@@ -11,7 +11,7 @@ end
 
 gem 'aws-sdk', '~> 2.3'
 gem 'coffee-rails', '~> 4.2'
-gem 'dotenv-rails', groups: %i[development test]
+gem 'dotenv-rails', groups: %i(development test)
 gem 'foreman'
 gem 'friendly_id', '~> 5.1.0'
 gem 'jbuilder', '~> 2.5'
@@ -29,7 +29,7 @@ gem 'webpacker'
 gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', platforms: %i(mri mingw x64_mingw)
   gem 'capybara', '~> 2.13'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'faker'
@@ -44,4 +44,4 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)

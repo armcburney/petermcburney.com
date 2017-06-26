@@ -9,8 +9,8 @@ Style/MultilineMethodCallIndentation:
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    '%i': []
-    '%w': []
+    '%i': ()
+    '%w': ()
 
 Style/RedundantFreeze:
   Enabled: true
