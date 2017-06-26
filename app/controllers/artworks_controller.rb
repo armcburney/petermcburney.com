@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Artwork controller
 # Coded by: Andrew McBurney

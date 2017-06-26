@@ -6,3 +6,14 @@ Documentation:
 
 Style/MultilineMethodCallIndentation:
   EnforcedStyle: indented
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': []
+    '%w': []
+
+Style/RedundantFreeze:
+  Enabled: true
+
+Style/MutableConstant:
+  Enabled: false
