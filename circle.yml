@@ -1,0 +1,16 @@
+machine:
+  ruby:
+    version: 2.4.1
+  node:
+    version: v6.11.0
+
+dependencies:
+  pre:
+    - bundle install
+    - sudo apt-get install postgresql-9.6
+    - curl -o- -L https://yarnpkg.com/install.sh | TERM=xterm bash
+  override:
+    - yarn
+test:
+  override:
+    - rspec
