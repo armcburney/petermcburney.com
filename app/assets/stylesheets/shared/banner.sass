@@ -1,0 +1,31 @@
+/**
+ * banner.sass
+ * Banner specific styles
+ */
+
+@import mixins/*
+@import variables/*
+
+.bg-abu
+  background: image-url("banners/abu.png")
+
+.banner
+  position: relative
+
+  img
+    +mask
+
+    height: auto
+    z-index: 0
+    width: 100vw
+
+  h1
+    +black-shadow
+    +center-v-h(50%, 50%)
+
+    color: $white
+    font-size: 8vw
+    font-weight: 200
+    letter-spacing: 5px
+    text-align: center
+    width: 100%

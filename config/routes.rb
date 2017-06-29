@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
   resources :artworks, path: 'artwork'
   get 'artwork/types/copic', to: 'artworks#copic'
   get 'artwork/types/painting', to: 'artworks#paintings'

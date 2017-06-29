@@ -1,4 +1,20 @@
 /*
  *= require_tree .
  *= require_self
+ *= require purecss
  */
+
+body {
+  background-color:  #eaeaea;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-01 {
+  background-image: url(https://unsplash.it/1000/1000/?image=787);
+}
+
+.bg-02 {
+  background-image: url(https://unsplash.it/1000/1000/?image=723);
+}

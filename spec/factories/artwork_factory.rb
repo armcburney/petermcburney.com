@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 FactoryGirl.define do
-  TYPES = %i[copic painting sketch].freeze
+  TYPES = %i(copic painting sketch).freeze
 
   factory :artwork do
     title { Faker::Name.title }

@@ -1,0 +1,88 @@
+/**
+ * home.sass
+ * Home page specific styles
+ */
+
+@import ../shared/mixins/*
+@import ../shared/variables/*
+
+header
+  .margin-left-medium
+    margin-left: 20px
+
+  section
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)))
+    color: $white
+    height: auto
+    padding-bottom: 40px
+    position: absolute
+    width: 100vw
+    z-index: 1
+
+    h1
+      font-weight: 200
+      margin: 50px 0px 0px 0px
+
+  h1, h2, h4, a
+    font-weight: 200
+    text-align: center
+    text-shadow: $black-text-shadow
+
+  h1
+    font-size: 8vw
+    letter-spacing: 5px
+
+  h2
+    font-size: 6vw
+    margin: 10px 0px 0px
+
+  h4, a
+    color: $white
+    font-size: 2.5vw
+    font-weight: 300
+    text-decoration: none
+
+    span
+      cursor: pointer
+      margin-left: 20px
+
+      &:hover
+        color: $off-white
+
+  .img
+    height: auto
+    width: 100vw
+    z-index: 0
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)))
+
+  .social
+    +center-h
+
+    bottom: 0px
+
+    .circle
+      +large-shadow(rgba(0, 0, 0, 1))
+
+      background: rgba(0, 0, 0, 0.5)
+      border-radius: 14px
+      float: left
+      height: 28px
+      transition: 0.2s
+      width: 28px
+
+      &:hover
+        +large-shadow(rgba(255, 255, 255, 1))
+
+        transform: scale(1.2)
+        transition: 0.2s
+
+    .icon
+      cursor: pointer
+      height: auto
+      opacity: 0.9
+      position: absolute
+      top: 0
+      width: 28px
+
+      &:hover
+        opacity: 1

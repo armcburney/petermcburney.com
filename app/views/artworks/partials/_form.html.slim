@@ -1,7 +1,7 @@
 // Errors
 - if artwork.errors.any?
   #error_explanation
-    h2= pluralize(artwork.errors.count, "error")
+    h2= pluralize(artwork.errors.count, 'error')
        prohibited this artwork from being saved:
     ul
       - artwork.errors.full_messages.each do |message|
