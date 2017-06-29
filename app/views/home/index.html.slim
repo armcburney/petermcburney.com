@@ -1,10 +1,45 @@
-.header
-  .row.hero.bg-main
-    .section.center
-      h1.x5 Peter McBurney's Art
-      h2 Artist, Photographer, Musician, Teacher.
-      hr
-      h4
-        span= link_to 'Profile', controller: 'home', action: 'profile'
-        span= link_to 'Artwork', controller: 'artworks'
-        span= link_to 'Commissions', controller: 'home', action: 'commissions'
+/!
+  home/index.html.slim
+  Root view for website
+
+// Main Header
+header
+  section
+    h1 Peter McBurney's Art
+    h2 Artist, Photographer, and Musician.
+
+    // Social Media Links
+    hr
+    h4
+      span= link_to 'Profile', controller: 'home', action: 'profile'
+      span= link_to 'Artwork', controller: 'artworks'
+      span= link_to 'Commissions', controller: 'home', action: 'commissions'
+    hr
+
+    // Social Icons
+    = render 'icons'
+
+  = image_tag('https://s3.amazonaws.com/petermcburneyartwork/copic/numa.jpg' , class: 'img')
+
+// Artwork
+= render 'shared/banner', label: 'Featured Artwork', image: 'abu'
+= render 'shared/grid', images: @artworks
+
+// Photography
+= render 'shared/banner', label: 'Featured Photography', image: 'falls'
+= render 'shared/grid', images: @artworks
+
+// Instagram
+= render 'shared/banner', label: 'Instagram Feed', image: 'owl'
+
+// Instafeed.js
+#instafeed
+javascript:
+  var userFeed = new Instafeed({
+    get: 'user',
+    userId: "#{ENV['INSTA_USER']}",
+    accessToken: "#{ENV['INSTA_ACCESS']}",
+    resolution: 'low_resolution',
+    useHttp: true
+  });
+  userFeed.run();

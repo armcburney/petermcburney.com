@@ -13,6 +13,7 @@
 .byebug_history
 .env
 .env.development
+.DS_Store
 /public/packs
 /public/system
 /node_modules
