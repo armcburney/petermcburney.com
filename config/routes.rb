@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'admin/index'
+  resources :photos
+  get 'admin', to: 'admin#index'
+  get 'admin/copic', to: 'admin#copic'
+  get 'admin/paintings', to: 'admin#paintings'
+  get 'admin/sketches', to: 'admin#sketches'
+  get 'admin/for_sale', to: 'admin#for_sale'
 
   resources :artworks, path: 'artwork'
   get 'artwork/types/copic', to: 'artworks#copic'
