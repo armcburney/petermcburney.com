@@ -1,5 +1,3 @@
-.content
-  .pure-g
-    - images.each do |image|
-      .pure-u-1.pure-u-sm-1-2.pure-u-md-1-3.pure-u-lg-1-4
-        = render 'shared/artwork', artwork: image
+.grid
+  - images.each do |photo|
+    .image style="background: url(#{photo.image.url(:medium)});"
