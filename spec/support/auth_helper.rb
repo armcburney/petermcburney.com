@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AuthHelper
   def http_login
     username = ENV['USERNAME']

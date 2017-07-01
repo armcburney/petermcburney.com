@@ -1,9 +1,27 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ArtworksController, type: :routing do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/artwork').to route_to('artworks#index')
+    end
+
+    it 'routes to #copic' do
+      expect(get: '/artwork/types/copic').to route_to('artworks#copic')
+    end
+
+    it 'routes to #painting' do
+      expect(get: '/artwork/types/painting').to route_to('artworks#paintings')
+    end
+
+    it 'routes to #sketch' do
+      expect(get: '/artwork/types/sketch').to route_to('artworks#sketches')
+    end
+
+    it 'routes to #for_sale' do
+      expect(get: '/artwork/types/for_sale').to route_to('artworks#for_sale')
     end
 
     it 'routes to #new' do

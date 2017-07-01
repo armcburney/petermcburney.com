@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryGirl.define do
   TYPES = %i(location nature wildlife).freeze
 
@@ -9,5 +11,4 @@ FactoryGirl.define do
     location { Faker::Address.city + ', ' + Faker::Address.state }
     image { File.new(Rails.root + 'spec/factories/images/sample.jpg') }
   end
-
 end
