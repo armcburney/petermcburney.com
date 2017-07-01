@@ -1,3 +1,4 @@
 .grid
   - images.each do |photo|
-    .image style="background: url(#{photo.image.url(:medium)});"
+    = link_to photo
+      .image style="background: url(#{photo.image.url(:medium)});"
