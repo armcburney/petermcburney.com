@@ -11,10 +11,9 @@ class Artwork < ApplicationRecord
   validates :title, presence: true
   validates :slug, presence: true
   validates :price, presence: true, if: :for_sale?
-
-  validates_inclusion_of :artwork_type, in: %w(copic painting sketch)
-  validates_inclusion_of :featured, in: [true, false]
-  validates_inclusion_of :for_sale, in: [true, false]
+  validates :artwork_type, inclusion: { in: %w(copic painting sketch) }
+  validates :featured, inclusion: { in: [true, false] }
+  validates :for_sale, inclusion: { in: [true, false] }
 
   validate :slug_is_parameterized_title
 

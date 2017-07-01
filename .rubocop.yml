@@ -1,8 +1,19 @@
+Documentation:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - ./**/*_spec.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - ./**/*_spec.rb
+
 Metrics/LineLength:
   Max: 100
 
-Documentation:
-  Enabled: false
+Rails:
+  Enabled: true
 
 Style/MultilineMethodCallIndentation:
   EnforcedStyle: indented

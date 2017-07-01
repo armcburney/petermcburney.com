@@ -1,17 +1,30 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  resources :photos
+  # Admin Routes
   get 'admin', to: 'admin#index'
   get 'admin/copic', to: 'admin#copic'
   get 'admin/paintings', to: 'admin#paintings'
   get 'admin/sketches', to: 'admin#sketches'
   get 'admin/for_sale', to: 'admin#for_sale'
+  get 'admin/location', to: 'admin#location'
+  get 'admin/nature', to: 'admin#nature'
+  get 'admin/wildlife', to: 'admin#wildlife'
 
+  # Artwork Routes
   resources :artworks, path: 'artwork'
   get 'artwork/types/copic', to: 'artworks#copic'
   get 'artwork/types/painting', to: 'artworks#paintings'
   get 'artwork/types/sketch', to: 'artworks#sketches'
   get 'artwork/types/for_sale', to: 'artworks#for_sale'
 
+  # Photo Routes
+  resources :photos
+  get 'photos/types/location', to: 'photos#location'
+  get 'photos/types/nature', to: 'photos#nature'
+  get 'photos/types/wildlife', to: 'photos#wildlife'
+
+  # Home Routes
   resources :home, only: :index
   get 'commissions', to: 'home#commissions'
   get 'profile', to: 'home#profile'

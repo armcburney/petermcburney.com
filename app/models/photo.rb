@@ -8,10 +8,10 @@ class Photo < ApplicationRecord
   has_attached_file :image, styles: { large: '1000x', medium: '500x' }
 
   validates :title, presence: true
-  validates :slug, presence: true
+  validates :slug,  presence: true
 
-  validates_inclusion_of :image_type, in: %w(location nature wildlife)
-  validates_inclusion_of :featured, in: [true, false]
+  validates :image_type, inclusion: { in: %w(location nature wildlife) }
+  validates :featured,   inclusion: { in: [true, false] }
 
   validate :slug_is_parameterized_title
 

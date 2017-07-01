@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+#
+# Admin controller
+# Controller for website records
+#
 class AdminController < ApplicationController
   http_basic_authenticate_with(
     name: ENV['USERNAME'], password: ENV['PASSWORD']
@@ -7,7 +11,17 @@ class AdminController < ApplicationController
 
   def index
     @artworks = Artwork.all
+    @photos   = Photo.all
   end
+
+  def featured
+    @artworks = Artwork.where(featured: true)
+    @photos   = Photo.where(featured: true)
+  end
+
+  # ***************************
+  # Artwork Routes
+  # ***************************
 
   def copic
     @artworks = Artwork.where(artwork_type: :copic)
@@ -23,5 +37,21 @@ class AdminController < ApplicationController
 
   def for_sale
     @artworks = Artwork.where(for_sale: true)
+  end
+
+  # ***************************
+  # Photo Routes
+  # ***************************
+
+  def location
+    @photos = Artwork.where(image_type: :location)
+  end
+
+  def nature
+    @photos = Artwork.where(image_type: :nature)
+  end
+
+  def wildlife
+    @photos = Artwork.where(image_type: :wildlife)
   end
 end
