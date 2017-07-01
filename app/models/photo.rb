@@ -4,8 +4,7 @@ class Photo < ApplicationRecord
   extend FriendlyId
 
   friendly_id :title, use: :slugged
-
-  has_attached_file :image, styles: { large: '1000x', medium: '500x' }
+  has_attached_file :image, styles: { large: '800x', medium: '400x' }
 
   validates :title, presence: true
   validates :slug,  presence: true

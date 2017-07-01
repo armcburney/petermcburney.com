@@ -7,7 +7,7 @@
 class ArtworksController < ApplicationController
   http_basic_authenticate_with(
     name: ENV['USERNAME'], password: ENV['PASSWORD'],
-    except: %i(index show copic sketches paintings)
+    except: %i(index show copic sketches paintings for_sale)
   )
 
   before_action :set_artwork, only: %i(show edit update destroy)

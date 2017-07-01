@@ -15,7 +15,10 @@ header
     h4
       span= link_to 'Profile', controller: 'home', action: 'profile'
       span= link_to 'Artwork', controller: 'artworks'
+      span= link_to 'Photography', controller: 'photos'
       span= link_to 'Commissions', controller: 'home', action: 'commissions'
+      span= link_to 'For Sale', controller: 'artworks', action: 'for_sale'
+      span= link_to 'Contact', controller: 'home', action: 'commissions'
     hr
 
     // Social Icons
@@ -45,3 +48,7 @@ javascript:
     useHttp: true
   });
   userFeed.run();
+
+// Footer
+footer
+  = render 'shared/banner', label: "Copyright © Peter McBurney #{Time.current.year}", image: 'lake'
