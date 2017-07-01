@@ -1,0 +1,33 @@
+.grid
+  display: flex
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  flex-wrap: wrap
+  margin: 0 auto
+  max-width: 1168px
+  overflow: auto
+  -webkit-flex-wrap: wrap
+  -webkit-justify-content: flex-start
+
+  .image
+    background-position: center center !important
+    background-size: cover !important
+    margin: 10px 20px
+
+@media screen and (max-width: 1250px)
+  .grid
+    max-width: 876px
+
+@media screen and (max-width: 900px)
+  .grid
+    max-width: 584px
+
+@media screen and (max-width: 584px)
+  .grid
+    max-width: 75%
+
+  .image
+    height: 55vw
+    width: 1000%
