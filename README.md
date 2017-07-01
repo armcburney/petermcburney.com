@@ -14,4 +14,4 @@
   </a>
 </p>
 
-![petermcburney.com](https://raw.githubusercontent.com/AndrewMcBurney/andrewmcburney.ca/master/src/main/resources/public/images/projects/petermcburney.png)
+![petermcburney.com](https://s3.amazonaws.com/petermcburneyartwork/copic/numa.jpg)
