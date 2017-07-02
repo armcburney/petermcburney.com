@@ -125,6 +125,6 @@ class ArtworksController < ApplicationController
 
   def artwork_params
     params.require(:artwork)
-      .permit(:title, :featured, :for_sale, :artwork_type, :size, :price, :image)
+      .permit(:title, :featured, :for_sale, :artwork_type, :size, :price, :media, :image)
   end
 end

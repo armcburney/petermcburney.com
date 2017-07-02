@@ -8,6 +8,8 @@ class Artwork < ApplicationRecord
 
   validates :title, presence: true
   validates :slug, presence: true
+  validates :media, presence: true
+  validates :size, presence: true
   validates :price, presence: true, if: :for_sale?
   validates :artwork_type, inclusion: { in: %w(copic painting sketch) }
   validates :featured, inclusion: { in: [true, false] }
