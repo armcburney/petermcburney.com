@@ -1,0 +1,39 @@
+@import mixins/*
+
+nav
+  background: #232323
+  background: -webkit-linear-gradient(#333, #000)
+  background: -o-linear-gradient(#333, #000)
+  background: -moz-linear-gradient(#333, #000)
+  background: linear-gradient(#333, #000)
+  width: 100vw
+
+.border-bottom, .border-top
+  display: block
+  height: 35px
+
+.border-bottom
+  background: image-url('general/edge_down.png') repeat-x
+
+.border-top
+  background: image-url('general/edge_up.png') repeat-x
+
+.footer
+  background: #000000
+  background: -webkit-linear-gradient(#000, #333)
+  background: -o-linear-gradient(#000, #333)
+  background: -moz-linear-gradient(#000, #333)
+  background: linear-gradient(#000, #333)
+  padding: 10px 0px
+  min-height: 80px
+  height: auto
+
+nav h1, .footer h1
+  +margin-0-auto
+
+  color: #ffffff
+  font-size: 60px
+  font-weight: 200
+  letter-spacing: 2px
+  text-shadow: 1px 1px 2px #000000, 0 0 25px #555555, 0 0 5px #222222
+  width: 80%

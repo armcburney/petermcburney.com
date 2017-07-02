@@ -45,7 +45,7 @@ class ArtworksController < ApplicationController
   # GET /artwork
   # Aggregate by featured artwork (featured boolean)
   def index
-    @artworks = Artwork.all
+    @images = Artwork.paginate(page: params[:page], per_page: 12)
   end
 
   # GET /artwork/:title_slug
@@ -55,25 +55,25 @@ class ArtworksController < ApplicationController
   # GET /artwork/types/copic
   # Aggregate by copic marker paintings
   def copic
-    @artworks = Artwork.where(artwork_type: :copic)
+    @images = Artwork.where(artwork_type: :copic).paginate(page: params[:page], per_page: 12)
   end
 
   # GET /artwork/types/painting
   # Aggregate by paintings
   def paintings
-    @artworks = Artwork.where(artwork_type: :painting)
+    @images = Artwork.where(artwork_type: :painting).paginate(page: params[:page], per_page: 12)
   end
 
   # GET /artwork/types/sketch
   # Aggregate by sketches
   def sketches
-    @artworks = Artwork.where(artwork_type: :sketch)
+    @images = Artwork.where(artwork_type: :sketch).paginate(page: params[:page], per_page: 12)
   end
 
   # GET /artwork/types/for_sale
   # Select artworks for sale (for_sale boolean)
   def for_sale
-    @artworks = Artwork.where(for_sale: true)
+    @images = Artwork.where(for_sale: true).paginate(page: params[:page], per_page: 12)
   end
 
   # ***************************

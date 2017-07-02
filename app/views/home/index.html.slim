@@ -28,11 +28,11 @@ header
 
 // Artwork
 = render 'shared/banner', label: 'Featured Artwork', image: 'abu'
-= render 'shared/grid', images: @artworks
+= render 'shared/grid', images: @artworks, paginate: false
 
 // Photography
 = render 'shared/banner', label: 'Featured Photography', image: 'falls'
-= render 'shared/grid', images: @artworks
+= render 'shared/grid', images: @photos, paginate: false
 
 // Instagram
 = render 'shared/banner', label: 'Instagram Feed', image: 'owl'
