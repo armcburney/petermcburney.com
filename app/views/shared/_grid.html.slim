@@ -2,3 +2,6 @@
   - images.each do |photo|
     = link_to photo
       .image style="background: url(#{photo.image.url(:medium)});"
+
+- if paginate
+  = will_paginate @images

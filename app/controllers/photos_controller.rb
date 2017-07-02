@@ -7,7 +7,7 @@
 class PhotosController < ApplicationController
   http_basic_authenticate_with(
     name: ENV['USERNAME'], password: ENV['PASSWORD'],
-    except: %i(index show nature wildlife locations)
+    except: %i(index show nature wildlife location)
   )
 
   before_action :set_photo, only: %i(show edit update destroy)
@@ -45,7 +45,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # Aggregate by featured photos (featured boolean)
   def index
-    @photos = Photo.all
+    @images = Photo.paginate(page: params[:page], per_page: 12)
   end
 
   # GET /photos/:title_slug
@@ -54,20 +54,20 @@ class PhotosController < ApplicationController
 
   # GET /photos/types/location
   # Aggregate by location photos
-  def locations
-    @locations = Photo.where(image_type: 'locations')
+  def location
+    @images = Photo.where(image_type: :location).paginate(page: params[:page], per_page: 12)
   end
 
   # GET /photos/types/nature
   # Aggregate by nature photos
   def nature
-    @nature = Photo.where(image_type: 'nature')
+    @images = Photo.where(image_type: :nature).paginate(page: params[:page], per_page: 12)
   end
 
   # GET /photos/types/wildlife
   # Aggregate by wildlife photos
   def wildlife
-    @wildlife = Photo.where(image_type: 'wildlife')
+    @images = Photo.where(image_type: :wildlife).paginate(page: params[:page], per_page: 12)
   end
 
   # ***************************
