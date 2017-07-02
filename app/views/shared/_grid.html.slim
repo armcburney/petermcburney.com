@@ -1,7 +1,6 @@
 .grid
-  - images.each do |photo|
-    = link_to photo
-      .image style="background: url(#{photo.image.url(:medium)});"
+  - images.each do |image|
+    = render 'shared/image', photo: image, image_type: image_type
 
 - if paginate
   = will_paginate @images

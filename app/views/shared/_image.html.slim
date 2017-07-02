@@ -1,0 +1,15 @@
+= link_to photo
+  .image style="background: url(#{photo.image.url(:medium)});"
+  .text
+    h3= photo.title
+    hr
+
+    - if image_type == :photograph
+      p= photo.location
+
+    - else
+      p= photo.media
+      p= photo.size
+
+      - if photo.for_sale
+        p $#{photo.price} USD

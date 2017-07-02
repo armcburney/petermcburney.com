@@ -1,9 +1,36 @@
-= form_for @photo do |f|
-  - if @photo.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@photo.errors.count, "error")} prohibited this photo from being saved:"
-      ul
-        - @photo.errors.full_messages.each do |message|
-          li = message
+- if photo.errors.any?
+  #error_explanation
+    h2= pluralize(photo.errors.count, 'error')
+       prohibited this photo from being saved:
+    ul
+      - photo.errors.full_messages.each do |message|
+        li= message
 
-  .actions = f.submit
+table
+  tbody
+    = form_with(model: photos, local: true) do |form|
+      tr
+        td
+          = form.label :title
+          = form.text_field :title, id: :photo_title
+        td
+          = form.label :photo_type
+          = form.text_field :photo_type, id: :photo_type
+        td
+          = form.label :size
+          = form.text_field :size, id: :photo_size
+        td
+          = form.label :price
+          = form.text_field :price, id: :photo_price
+      tr
+        td
+          = form.label :media
+          = form.text_field :media, id: :photo_id
+        td
+          = form.label :image
+          = form.file_field :image
+        td
+          = form.label :featured
+          = form.check_box :featured, id: :photo_featured
+        td
+          = form.submit

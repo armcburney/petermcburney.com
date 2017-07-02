@@ -15,7 +15,8 @@ RSpec.xdescribe ArtworksController, type: :controller do
       price: '9.99',
       image_file_name: 'sample_image.jpg',
       image_content_type: 'image/jpg',
-      image_file_size: 1.megabyte
+      image_file_size: 1.megabyte,
+      media: 'Acrylic on canvas'
     }
   end
 
@@ -29,7 +30,8 @@ RSpec.xdescribe ArtworksController, type: :controller do
       size: 'Size',
       image_file_name: 'sample_image.jpg',
       image_content_type: 'image/jpg',
-      image_file_size: 1.megabyte
+      image_file_size: 1.megabyte,
+      media: 'Acrylic on canvas'
     }
   end
 

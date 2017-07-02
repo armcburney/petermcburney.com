@@ -14,11 +14,11 @@ header
     hr
     h4
       span= link_to 'Profile', controller: 'home', action: 'profile'
-      span= link_to 'Artwork', controller: 'artworks'
-      span= link_to 'Photography', controller: 'photos'
-      span= link_to 'Commissions', controller: 'home', action: 'commissions'
-      span= link_to 'For Sale', controller: 'artworks', action: 'for_sale'
-      span= link_to 'Contact', controller: 'home', action: 'commissions'
+      span.margin-left= link_to 'Artwork', controller: 'artworks'
+      span.margin-left= link_to 'Photography', controller: 'photos'
+      span.margin-left= link_to 'Commissions', controller: 'home', action: 'commissions'
+      span.margin-left= link_to 'For Sale', controller: 'artworks', action: 'for_sale'
+      span.margin-left= link_to 'Contact', controller: 'home', action: 'commissions'
     hr
 
     // Social Icons
@@ -28,11 +28,11 @@ header
 
 // Artwork
 = render 'shared/banner', label: 'Featured Artwork', image: 'abu'
-= render 'shared/grid', images: @artworks, paginate: false
+= render 'shared/grid', images: @artworks, paginate: false, image_type: :artwork
 
 // Photography
 = render 'shared/banner', label: 'Featured Photography', image: 'falls'
-= render 'shared/grid', images: @photos, paginate: false
+= render 'shared/grid', images: @photos, paginate: false, image_type: :photograph
 
 // Instagram
 = render 'shared/banner', label: 'Instagram Feed', image: 'owl'
