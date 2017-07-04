@@ -23,7 +23,7 @@ main {
   height: auto !important;
   height: 100%;
   min-height: 100%;
-  margin-bottom: -135px;
+  margin-bottom: -208px;
 }
 
 /**
@@ -31,5 +31,5 @@ main {
  * Must be the negated value of 'main' margin-bottom
  */
 #push {
-  height: 135px;
+  height: 208px;
 }

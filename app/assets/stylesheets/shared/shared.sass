@@ -1,38 +1,25 @@
 @import mixins/*
 
-nav
-  +gradient(#333, #000)
+main section
+  +margin-0-auto-offset(40px)
 
-  width: 100vw
+main h1
+  font-size: 60px
+  font-weight: 200
+  margin: 0px
 
 .border-bottom, .border-top
   display: block
   height: 35px
 
+
 .border-bottom
   background: image-url('general/edge_down.png') repeat-x
+
 
 .border-top
   background: image-url('general/edge_up.png') repeat-x
 
-.footer
-  +gradient(#000, #333)
 
-  padding: 10px 0px
-  min-height: 80px
-  height: auto
-
-nav h1
-  font-size: 60px
-
-.footer h1
-  text-align: center
-  font-size: 50px
-
-nav h1, .footer h1
+nav ul.menu, .footer section
   +margin-0-auto-offset(40px)
-
-  color: #ffffff
-  font-weight: 200
-  letter-spacing: 2px
-  text-shadow: 1px 1px 2px #000000, 0 0 25px #555555, 0 0 5px #222222
