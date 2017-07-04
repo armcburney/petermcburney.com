@@ -1,0 +1,37 @@
+@import mixins/*
+
+.row.header
+  +gradient(#333, #000)
+
+  .section
+    nav
+      li:hover > ul
+        background: rgba(0, 0, 0, 0.75)
+        border-radius: 6px
+
+      .menu
+        a
+          color: #ffffff
+          font-weight: 400
+          overflow: hidden
+          text-decoration: none
+
+        li
+          background: initial
+
+
+#menu-toggle-label
+  z-index: 1
+
+
+@media screen and (max-width: 860px)
+  nav
+    border-bottom: inherit !important
+
+  .row.header, .row.header .section, .row.header .section nav
+    height: auto
+    min-height: 4.25em
+
+
+  .row.header .section nav
+    overflow: hidden
