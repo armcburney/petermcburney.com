@@ -26,3 +26,17 @@
 
   @media screen and (max-width: 584px)
     max-width: 80% !important
+
+
+=margin-0-auto-offset($offset)
+  margin: 0 auto
+  +calc( max-width, '1168px - 40px')
+
+  @media screen and (max-width: 1250px)
+    +calc( max-width, '876px - 40px')
+
+  @media screen and (max-width: 900px)
+    +calc( max-width, '584px - 40px')
+
+  @media screen and (max-width: 584px)
+    +calc( max-width, '80% - 40px')
