@@ -1,31 +1,18 @@
-.row
-  .section
+main
+  //= render 'shared/nav', label: 'Show'
+
+  .container
     = image_tag @artwork.image.url(:large)
 
-    p
-      strong
-        | Title:
-      = @artwork.title
-    p
-      strong
-        | Featured:
-      = @artwork.featured
-    p
-      strong
-        | For sale:
-      = @artwork.for_sale
-    p
-      strong
-        | Type:
-      = @artwork.artwork_type
-    p
-      strong
-        | Size:
-      = @artwork.size
-    p
-      strong
-        | Price:
-      = @artwork.price
+    .text
+      p= @artwork.title
+      p= @artwork.size
 
-    = link_to 'Edit', edit_artwork_path(@artwork)
-    = link_to 'Back', artworks_path
+      - if @artwork.for_sale
+        p= @artwork.price
+
+      = link_to 'Artwork', artworks_path
+
+  #push
+
+= render 'shared/footer'

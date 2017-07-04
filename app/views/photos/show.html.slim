@@ -1,5 +1,15 @@
-p#notice = notice
+main
+  //= render 'shared/nav', label: 'Show'
 
-= link_to 'Edit', edit_photo_path(@photo)
-'  |
-= link_to 'Back', photos_path
+  .container
+    = image_tag @photo.image.url(:large)
+
+    .text
+      p= @photo.title
+      p= @photo.location
+
+      = link_to 'Photo', photos_path
+
+  #push
+
+= render 'shared/footer'
