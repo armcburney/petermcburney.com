@@ -1,13 +1,44 @@
 @import mixins/*
 
-.footer
-  +gradient(#000, #333)
-
-  padding: 10px 0px
-  min-height: 80px
+footer
+  background: #000
+  color: #ffffff
   height: auto
+  min-height: 80px
+  overflow: hidden
+  padding: 10px 0px
 
-  h1
+  .padding-right
+    padding-right: 10%
+
+  .padding-left
+    padding-left: 10%
+
+  a
     color: #ffffff
-    font-size: 50px
-    text-align: center
+
+    &:hover
+      opacity: 0.8
+
+  .half
+    display: table-cell
+    width: 50%
+
+  ul
+    list-style: none
+    margin: 0px
+    padding: 0px
+
+    li
+      margin-bottom: 30px
+
+      ul
+        padding: 0px 30px
+
+        li
+          margin: 4px 0px
+
+
+@media screen and (max-width: 860px)
+  footer .padding-right, footer .padding-left
+    padding: 0%
