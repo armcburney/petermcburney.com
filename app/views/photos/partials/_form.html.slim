@@ -8,24 +8,17 @@
 
 table
   tbody
-    = form_with(model: photos, local: true) do |form|
+    = form_with(model: photo, local: true) do |form|
       tr
         td
           = form.label :title
           = form.text_field :title, id: :photo_title
         td
-          = form.label :photo_type
-          = form.text_field :photo_type, id: :photo_type
+          = form.label :image_type
+          = form.text_field :image_type, id: :photo_image_type
         td
-          = form.label :size
-          = form.text_field :size, id: :photo_size
-        td
-          = form.label :price
-          = form.text_field :price, id: :photo_price
-      tr
-        td
-          = form.label :media
-          = form.text_field :media, id: :photo_id
+          = form.label :location
+          = form.text_field :location, id: :image_location
         td
           = form.label :image
           = form.file_field :image
