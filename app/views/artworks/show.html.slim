@@ -5,13 +5,13 @@ main
     = image_tag @artwork.image.url(:large)
 
     .text
-      p= @artwork.title
+      h2= @artwork.title
+      hr
+      p= @artwork.media
       p= @artwork.size
 
       - if @artwork.for_sale
-        p= @artwork.price
-
-      = link_to 'Artwork', artworks_path
+        p #{number_to_currency(@artwork.price)} USD
 
   #push
 

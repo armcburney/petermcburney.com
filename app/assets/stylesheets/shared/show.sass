@@ -1,10 +1,8 @@
 @import mixins/*
 
 main .container
-  +margin-0-auto
-
-  margin: 5%
-
+  margin: 2.5% auto
+  max-width: 800px
   position: relative
 
   img, .text
@@ -12,6 +10,15 @@ main .container
 
   .text
     background: rgba(0, 0, 0, 0.5)
-    bottom: 0px
+    bottom: 5px
+    padding: 0px 10px
     color: #ffffff
     position: absolute
+    width: calc(100% - 20px)
+
+    h2
+      font-weight: 300
+
+    p
+      float: left
+      margin-right: 12px
