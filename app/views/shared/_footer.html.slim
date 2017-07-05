@@ -1,4 +1,47 @@
 span.border-top
-.footer
+footer
   section
-    h1 Copyright © Peter McBurney #{Time.current.year}
+    .col-1-3
+      .padding-right
+        h3 About
+        //hr
+        p Peter McBurney is a nature and wildlife artist in the greater Niagara Region.
+        p Peter's been an artist for over four decades — honing his craft through various artistic mediums.
+        p The paintings that Peter McBurney creates reflect that love and respect he has for nature. They are the result of countless hours of careful observation and rendering in the studio.
+
+    .col-1-3
+      h3 Links
+      .half
+        ul
+          li= link_to 'Home', home_index_url
+          li= link_to 'Profile', profile_url
+          li= link_to 'Commissions', commissions_url
+          li= link_to 'For Sale', artwork_types_for_sale_url
+          li= link_to 'Contact', commissions_url
+      .half
+        ul
+          li
+            = link_to 'Photography', photos_url
+            ul
+              li= link_to 'Locations', photos_types_location_url
+              li= link_to 'Nature', photos_types_nature_url
+              li= link_to 'Wildlife', photos_types_wildlife_url
+
+          li
+            = link_to 'Artwork', artworks_url
+            ul
+              li= link_to 'Copic Markers', artwork_types_copic_url
+              li= link_to 'Paintings', artwork_types_painting_url
+              li= link_to 'Sketches', artwork_types_sketch_url
+
+    .col-1-3
+      .padding-left
+        h3 Contact
+        p
+          | If you have any inquiries, you may contact me here at
+          |  <a href='mailto:mcburneyp@gmail.com' target='_top'>mcburneyp@gmail.com</a>.
+        h3 Commissions
+        p
+          | Commissions are available on request. Should you like something commissioned,
+          |  please feel free to reach out. Prices for commissions may be found
+          |  <a href='/commissions'>here</a>.
