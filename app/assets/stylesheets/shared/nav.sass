@@ -28,6 +28,12 @@
   nav
     border-bottom: inherit !important
 
+    .icon-menu
+      background-image: asset-url('general/icon-menu.png')
+
+    #menu-toggle:checked + .icon-menu
+      background-image: asset-url('general/icon-close.png')
+
   .row.header, .row.header .section, .row.header .section nav
     height: auto
     min-height: 4.25em
