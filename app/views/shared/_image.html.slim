@@ -12,4 +12,4 @@
       p= photo.size
 
       - if photo.for_sale
-        p $#{photo.price} USD
+        p #{number_to_currency(photo.price)} USD

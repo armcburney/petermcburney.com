@@ -5,10 +5,9 @@ main
     = image_tag @photo.image.url(:large)
 
     .text
-      p= @photo.title
+      h2= @photo.title
+      hr
       p= @photo.location
-
-      = link_to 'Photo', photos_path
 
   #push
 
