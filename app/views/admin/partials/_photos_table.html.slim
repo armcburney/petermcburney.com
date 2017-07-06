@@ -1,0 +1,25 @@
+section
+  h1= label
+  hr
+  = link_to 'New Photo', new_photo_path
+  br
+
+  table
+    thead
+      tr
+        th Title
+        th Featured
+        th Type
+        th Location
+        th[colspan='3']
+
+    tbody
+      - @photos.each do |photo|
+        tr
+          td= photo.title
+          td= photo.featured
+          td= photo.image_type
+          td= photo.location
+          td= link_to 'Show', photo
+          td= link_to 'Edit', edit_photo_path(photo)
+          td= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' }

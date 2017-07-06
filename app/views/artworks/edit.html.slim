@@ -1,4 +1,11 @@
-h1 Editing Artwork
-= render 'artworks/partials/form', artwork: @artwork
-= link_to 'Show', @artwork
-= link_to 'Back', artworks_path
+main
+  = render 'shared/nav'
+  section
+    h1 Editing Artwork
+    hr
+    = render 'artworks/partials/form', artwork: @artwork
+    = render 'artworks/partials/display', artwork: @artwork
+
+  #push
+
+= render 'shared/footer'

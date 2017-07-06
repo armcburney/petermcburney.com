@@ -10,30 +10,24 @@ table
   tbody
     = form_with(model: artwork, local: true) do |form|
       tr
-        td
-          = form.label :title
-          = form.text_field :title, id: :artwork_title
-        td
-          = form.label :artwork_type
-          = form.text_field :artwork_type, id: :artwork_type
-        td
-          = form.label :size
-          = form.text_field :size, id: :artwork_size
-        td
-          = form.label :price
-          = form.text_field :price, id: :artwork_price
+        th= form.label :title
+        th= form.label :artwork_type
+        th= form.label :size
+        th= form.label :price
+        th= form.label :media
+        th= form.label :image
+        th= form.label :featured
+        th= form.label :for_sale
+
       tr
-        td
-          = form.label :media
-          = form.text_field :media, id: :artwork_id
-        td
-          = form.label :image
-          = form.file_field :image
-        td
-          = form.label :featured
-          = form.check_box :featured, id: :artwork_featured
-          br
-          = form.label :for_sale
-          = form.check_box :for_sale, id: :artwork_for_sale
-        td
-          = form.submit
+        td= form.text_field :title, id: :artwork_title
+        td= form.text_field :artwork_type, id: :artwork_type
+        td= form.text_field :size, id: :artwork_size
+        td= form.text_field :price, id: :artwork_price
+        td= form.text_field :media, id: :artwork_id
+        td= form.file_field :image
+        td= form.check_box :featured, id: :artwork_featured
+        td= form.check_box :for_sale, id: :artwork_for_sale
+
+      tr
+        td= form.submit

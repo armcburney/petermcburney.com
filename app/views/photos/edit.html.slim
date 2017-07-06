@@ -1,7 +1,11 @@
-h1 Editing photo
+main
+  = render 'shared/nav'
+  section
+    h1 Editing Photo
+    hr
+    = render 'photos/partials/form', photo: @photo
+    = render 'photos/partials/display', photo: @photo
 
-= render 'photos/partials/form', photo: @photo
+  #push
 
-= link_to 'Show', @photo
-'  |
-= link_to 'Back', photos_path
+= render 'shared/footer'

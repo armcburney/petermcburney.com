@@ -23,6 +23,10 @@ class AdminController < ApplicationController
   # Artwork Routes
   # ***************************
 
+  def artwork
+    @artworks = Artwork.all
+  end
+
   def copic
     @artworks = Artwork.where(artwork_type: :copic)
   end
@@ -43,15 +47,19 @@ class AdminController < ApplicationController
   # Photo Routes
   # ***************************
 
+  def photos
+    @photos = Photo.all
+  end
+
   def location
-    @photos = Artwork.where(image_type: :location)
+    @photos = Photo.where(image_type: :location)
   end
 
   def nature
-    @photos = Artwork.where(image_type: :nature)
+    @photos = Photo.where(image_type: :nature)
   end
 
   def wildlife
-    @photos = Artwork.where(image_type: :wildlife)
+    @photos = Photo.where(image_type: :wildlife)
   end
 end

@@ -1,0 +1,11 @@
+.container
+  = image_tag @artwork.image.url(:large)
+
+  .text
+    h2= @artwork.title
+    hr
+    p= @artwork.media
+    p= @artwork.size
+
+    - if @artwork.for_sale
+      p #{number_to_currency(@artwork.price)} USD
