@@ -4,6 +4,8 @@
 //
 
 export let InstafeedSlider = class InstafeedSlider {
+  interval = null;
+
   // Animate through Instafeed slider
   static animate() {
     let scroll_position = $('#instafeed').scrollLeft();
@@ -22,4 +24,7 @@ export let InstafeedSlider = class InstafeedSlider {
 };
 
 // Start Instafeed animation loop
-$(document).ready(() => setInterval(InstafeedSlider.animate, 4000));
+$(document).on('turbolinks:load', () => {
+  if (InstafeedSlider.interval !== null) clearInterval(InstafeedSlider.interval);
+  InstafeedSlider.interval = setInterval(InstafeedSlider.animate, 2000);
+});
