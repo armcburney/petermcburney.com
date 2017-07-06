@@ -1,3 +1,9 @@
-h1 New Photo
-= render 'photos/partials/form', photo: @photo
-= link_to 'Back', artworks_path
+main
+  = render 'shared/nav'
+  section
+    h1 New Photo
+    hr
+    = render 'photos/partials/form', photo: @photo
+  #push
+
+= render 'shared/footer'

@@ -1,14 +1,6 @@
 main
   = render 'shared/nav'
-
-  .container
-    = image_tag @photo.image.url(:large)
-
-    .text
-      h2= @photo.title
-      hr
-      p= @photo.location
-
+  = render 'photos/partials/display', photo: @photo
   #push
 
 = render 'shared/footer'

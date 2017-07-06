@@ -10,20 +10,17 @@ table
   tbody
     = form_with(model: photo, local: true) do |form|
       tr
-        td
-          = form.label :title
-          = form.text_field :title, id: :photo_title
-        td
-          = form.label :image_type
-          = form.text_field :image_type, id: :photo_image_type
-        td
-          = form.label :location
-          = form.text_field :location, id: :image_location
-        td
-          = form.label :image
-          = form.file_field :image
-        td
-          = form.label :featured
-          = form.check_box :featured, id: :photo_featured
-        td
-          = form.submit
+        th= form.label :title
+        th= form.label :image_type
+        th= form.label :location
+        th= form.label :image
+        th= form.label :featured
+        th Submit
+
+      tr
+        td= form.text_field :title, id: :photo_title
+        td= form.text_field :image_type, id: :photo_image_type
+        td= form.text_field :location, id: :image_location
+        td= form.file_field :image
+        td= form.check_box :featured, id: :photo_featured
+        td= form.submit
