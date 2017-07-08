@@ -18,12 +18,11 @@
     width: 100vw
 
   h1
-    +margin-0-auto
     +black-shadow
     +center-v-h(50%, 50%)
 
     color: $white
-    font-size: 8vw
+    font-size: 8.5vw
     font-weight: 200
     letter-spacing: 5px
     text-align: center
@@ -31,3 +30,13 @@
 
 header .banner
   margin: 0px 0px 30px
+
+
+@media screen and (min-width: 1250px)
+  .banner h1
+    font-size: 110px
+
+
+@media screen and (max-width: 584px)
+  .banner h1
+    font-size: 7.5vw
