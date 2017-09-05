@@ -6,10 +6,14 @@ Bundler.require(*Rails.groups)
 
 module PeterMcBurney
   class Application < Rails::Application
-    config.load_defaults 5.1
+    config.sass.preferred_syntax = :sass
 
     config.generators do |g|
+      g.javascripts false
+      g.scaffold_stylesheet false
+      g.stylesheets false
       g.template_engine :slim
+      g.test_framework :rspec
     end
   end
 end

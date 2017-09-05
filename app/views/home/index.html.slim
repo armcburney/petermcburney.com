@@ -27,16 +27,8 @@ header
 
   = image_tag('https://s3.amazonaws.com/petermcburneyartwork/copic/numa.jpg' , class: 'img')
 
-// Artwork
-= render 'shared/banner', label: 'Featured Artwork', image: 'abu'
-= render 'shared/grid', images: @artworks, paginate: false, image_type: :artwork
-
-// Photography
-= render 'shared/banner', label: 'Featured Photography', image: 'falls'
-= render 'shared/grid', images: @photos, paginate: false, image_type: :photograph
-
 // Instagram
-= render 'shared/banner', label: 'Instagram Feed', image: 'owl'
+= render 'shared/banner', label: 'Instagram Feed', image: 'abu'
 
 // Instafeed.js
 #instafeed

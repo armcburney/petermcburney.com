@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  def index
-    @artworks = Artwork.take(8)
-    @photos   = Photo.take(8)
-  end
+  def index() end
 
   def commissions() end
 
