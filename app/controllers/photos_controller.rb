@@ -43,7 +43,6 @@ class PhotosController < ApplicationController
   # ***************************
 
   # GET /photos
-  # Aggregate by featured photos (featured boolean)
   def index
     @images = Photo.paginate(page: params[:page], per_page: 12)
   end
@@ -51,6 +50,12 @@ class PhotosController < ApplicationController
   # GET /photos/:title_slug
   # Show single photo in previewer view
   def show() end
+
+  # GET /photos/types/featured
+  # Show featured photos
+  def featured
+    @images = Photo.where(featured: true).paginate(page: params[:page], per_page: 8)
+  end
 
   # GET /photos/types/location
   # Aggregate by location photos

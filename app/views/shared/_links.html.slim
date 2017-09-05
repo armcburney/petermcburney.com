@@ -2,6 +2,7 @@ li= link_to 'Commissions', commissions_url
 li
   = link_to 'Photography', photos_url
   ul
+    li= link_to 'Featured', photos_types_featured_url
     li= link_to 'Locations', photos_types_location_url
     li= link_to 'Nature', photos_types_nature_url
     li= link_to 'Wildlife', photos_types_wildlife_url
@@ -9,10 +10,11 @@ li
 li
   = link_to 'Artwork', artworks_url
   ul
+    li= link_to 'Featured', artwork_types_featured_url
+    li= link_to 'For Sale', artwork_types_for_sale_url
     li= link_to 'Copic Markers', artwork_types_copic_url
     li= link_to 'Paintings', artwork_types_painting_url
     li= link_to 'Sketches', artwork_types_sketch_url
-    li= link_to 'For Sale', artwork_types_for_sale_url
 
 li= link_to 'Profile', profile_url
 li= link_to 'Home', root_url

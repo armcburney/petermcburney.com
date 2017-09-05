@@ -21,12 +21,14 @@ Rails.application.routes.draw do
   get 'artwork/types/painting', to: 'artworks#paintings'
   get 'artwork/types/sketch', to: 'artworks#sketches'
   get 'artwork/types/for_sale', to: 'artworks#for_sale'
+  get 'artwork/types/featured', to: 'artworks#featured'
 
   # Photo Routes
   resources :photos
   get 'photos/types/location', to: 'photos#location'
   get 'photos/types/nature', to: 'photos#nature'
   get 'photos/types/wildlife', to: 'photos#wildlife'
+  get 'photos/types/featured', to: 'photos#featured'
 
   # Home Routes
   resources :home, only: :index

@@ -43,7 +43,6 @@ class ArtworksController < ApplicationController
   # ***************************
 
   # GET /artwork
-  # Aggregate by featured artwork (featured boolean)
   def index
     @images = Artwork.paginate(page: params[:page], per_page: 12)
   end
@@ -51,6 +50,12 @@ class ArtworksController < ApplicationController
   # GET /artwork/:title_slug
   # Show single artwork in previewer view
   def show() end
+
+  # GET /artwork/types/featured
+  # Show featured artwork
+  def featured
+    @images = Artwork.where(featured: true).paginate(page: params[:page], per_page: 8)
+  end
 
   # GET /artwork/types/copic
   # Aggregate by copic marker paintings
