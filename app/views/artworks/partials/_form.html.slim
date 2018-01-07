@@ -1,6 +1,6 @@
 - if artwork.errors.any?
   #error_explanation
-    h2= pluralize(artwork.errors.count, 'error')
+    h2= pluralize(artwork.errors.count, "error")
        prohibited this artwork from being saved:
     ul
       - artwork.errors.full_messages.each do |message|
@@ -11,9 +11,9 @@ table
     = form_with(model: artwork, local: true) do |form|
       tr
         th= form.label :title
-        th Copic
-        th Painting
-        th Sketch
+        th= form.label :artwork_type, "Copic"
+        th= form.label :artwork_type, "Painting"
+        th= form.label :artwork_type, "Sketch"
         th= form.label :size
         th= form.label :price
         th= form.label :media
@@ -23,9 +23,9 @@ table
 
       tr
         td= form.text_field :title, id: :artwork_title
-        td= form.radio_button :artwork_type, 'copic', checked: true
-        td= form.radio_button :artwork_type, 'painting'
-        td= form.radio_button :artwork_type, 'sketch'
+        td= form.radio_button :artwork_type, "copic", checked: true
+        td= form.radio_button :artwork_type, "painting"
+        td= form.radio_button :artwork_type, "sketch"
         td= form.text_field :size, id: :artwork_size
         td= form.text_field :price, id: :artwork_price
         td= form.text_field :media, id: :artwork_id
