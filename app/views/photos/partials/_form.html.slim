@@ -1,6 +1,6 @@
 - if photo.errors.any?
   #error_explanation
-    h2= pluralize(photo.errors.count, 'error')
+    h2= pluralize(photo.errors.count, "error")
        prohibited this photo from being saved:
     ul
       - photo.errors.full_messages.each do |message|
@@ -11,9 +11,9 @@ table
     = form_with(model: photo, local: true) do |form|
       tr
         th= form.label :title
-        th Location
-        th Nature
-        th Wildlife
+        th= form.label :image_type, "Location"
+        th= form.label :image_type, "Nature"
+        th= form.label :image_type, "Wildlife"
         th= form.label :location
         th= form.label :image
         th= form.label :featured
@@ -21,9 +21,9 @@ table
 
       tr
         td= form.text_field :title, id: :photo_title
-        td= form.radio_button :image_type, 'location', checked: true
-        td= form.radio_button :image_type, 'nature'
-        td= form.radio_button :image_type, 'wildlife'
+        td= form.radio_button :image_type, "location", checked: true
+        td= form.radio_button :image_type, "nature"
+        td= form.radio_button :image_type, "wildlife"
         td= form.text_field :location, id: :image_location
         td= form.file_field :image
         td= form.check_box :featured, id: :photo_featured
